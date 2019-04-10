@@ -7,6 +7,6 @@ echo "Command :" $CMD
 case $CMD in
     "start")
         echo "Starting Golang application"
-        exec /app/plantuml-image-conversion
+        exec /app/plantuml-image-converter
     ;;
 esac
