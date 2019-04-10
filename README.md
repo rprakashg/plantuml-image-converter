@@ -37,5 +37,11 @@ Alice <-- Bob: another authentication Response
 CURL
 
 ```
-
+curl -X POST \
+  https://plantuml-image-conversion-lmvtezbola-uc.a.run.app \
+  -H 'Accept: image/png' \
+  -H 'Postman-Token: 67adbefb-06e6-4bfc-8457-e0725f2a8bc8' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F uploadFile=@/Users/rgopina/cloudrun/demo.uml
 ``
