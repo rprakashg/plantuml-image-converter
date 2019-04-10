@@ -1,9 +1,26 @@
 steps:
+#Build container image
 - name: 'gcr.io/cloud-builders/docker'
   args: 
   - 'build'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/plantuml-image-conversion:latest'
+  - 'gcr.io/$PROJECT_ID/plantuml-image-converter:latest'
   - '.'
+#push container image to registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: 
+    - 'push'
+    - 'gcr.io/$PROJECT_ID/plantuml-image-converter:latest'
+#deploy to GCP
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+    - 'beta' 
+    - 'run'
+    - 'deploy'
+    - 'plantuml-image-converter'
+    - '--image'
+    - 'gcr.io/$PROJECT_ID/plantuml-image-converter:latest'
+    - '--region'
+    - 'us-central1'
 images: 
-- 'gcr.io/$PROJECT_ID/plantuml-image-conversion:latest'
+- 'gcr.io/$PROJECT_ID/plantuml-image-converter:latest'
