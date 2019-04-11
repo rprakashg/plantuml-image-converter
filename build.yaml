@@ -22,5 +22,6 @@ steps:
     - 'gcr.io/$PROJECT_ID/plantuml-image-converter:latest'
     - '--region'
     - 'us-central1'
+    - '-—allow-unauthenticated'
 images: 
 - 'gcr.io/$PROJECT_ID/plantuml-image-converter:latest'
