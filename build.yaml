@@ -3,6 +3,8 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: 
   - 'build'
+  - '--build-arg'
+  - 'PLANTUML_VERSION=1.2019.4'
   - '-t'
   - 'gcr.io/$PROJECT_ID/plantuml-image-converter:latest'
   - '.'

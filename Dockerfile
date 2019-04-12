@@ -15,7 +15,7 @@ RUN go test $(go list ./...) -cover \
 
 FROM alpine:3.6
 
-ENV PLANTUML_VERSION 1.2017.18
+ARG PLANTUML_VERSION=1.2019.4
 ENV LANG en_US.UTF-8
 
 COPY entrypoint.sh /root/

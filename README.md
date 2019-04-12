@@ -8,16 +8,14 @@ Run command below in shell
 
 
 ```
-
 gcloud builds submit . --config=build.yaml
-
 ```
 
 ## Running
 Run command below to deploy and run it in Cloud Run
 
 ```
-gcloud beta run deploy gcr.io/$PROJECT_ID/plantuml-image-conversion
+gcloud beta run deploy gcr.io/$PROJECT_ID/plantuml-image-converter
 ```
 
 ## Tesitng
