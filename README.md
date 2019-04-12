@@ -15,7 +15,7 @@ gcloud builds submit . --config=build.yaml
 Run command below to deploy and run it in Cloud Run
 
 ```
-gcloud beta run deploy gcr.io/$PROJECT_ID/plantuml-image-converter
+gcloud beta run deploy --image gcr.io/$PROJECT_ID/plantuml-image-converter --allow-unauthenticated
 ```
 
 ## Tesitng
